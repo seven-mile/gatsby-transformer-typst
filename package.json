@@ -1,0 +1,37 @@
+{
+  "name": "gatsby-transformer-typst",
+  "version": "1.0.0",
+  "description": "transform typst source files to html with typst.ts",
+  "author": "seven-mile",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.20.13",
+    "gatsby-core-utils": "^4.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "babel-preset-gatsby-package": "^3.13.1",
+    "cross-env": "^7.0.3",
+    "gatsby-plugin-utils": "^4.13.1"
+  },
+  "homepage": "https://github.com/seven-mile/gatsby-transformer-typst",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "typst",
+    "typst.ts"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir . --ignore \"**/__tests__\"",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "watch": "babel -w src --out-dir . --ignore \"**/__tests__\""
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seven-mile/gatsby-transformer-typst.git"
+  }
+}
