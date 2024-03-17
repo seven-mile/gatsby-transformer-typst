@@ -32,6 +32,19 @@ module.exports = {
 }
 ```
 
+If you need tweak the scale of typst content, you can pass in a `domScale` option:
+
+```js
+{
+  resolve: `gatsby-transformer-typst`,
+  options: {
+    domScale: 1.17,
+  }
+},
+```
+
+`domScale` align your font-size in the typst content (like `16pt`) with the one in HTML/CSS. Trying several values interactively should work.
+
 ## Example
 
 Check out my [`blog-ng`](https://github.com/seven-mile/blog-ng) for an example of integrate it into a gatsby.js blog.
