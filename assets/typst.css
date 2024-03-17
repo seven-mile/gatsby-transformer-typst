@@ -1,7 +1,6 @@
 .typst-app {
   margin: 0;
-  --typst-dom-scale: 1;
-  /* --typst-dom-scale: 1.5; */
+  --typst-dom-scale: 1.17;
   margin: 5px;
 }
 
