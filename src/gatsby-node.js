@@ -4,7 +4,7 @@ const { supportedExtensions } = require("./supported-extensions");
 const Compiler = require("./compiler");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require('path');
-const { writeFileSync } = require("fs");
+const { writeFileSync, mkdirSync } = require("fs");
 
 const compiler = new Compiler();
 
@@ -27,6 +27,7 @@ async function onCreateNode({
   
   const buffer = compiler.vector(node.absolutePath)
 
+  mkdirSync(path.dirname(artifactPath), { recursive: true })
   writeFileSync(artifactPath, buffer)
 
   const typstNode = {
