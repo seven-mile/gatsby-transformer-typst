@@ -2,6 +2,9 @@
 
 const { supportedExtensions } = require("./supported-extensions");
 const Compiler = require("./compiler");
+const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require('path');
+const { writeFileSync } = require("fs");
 
 const compiler = new Compiler();
 
@@ -10,11 +13,21 @@ async function onCreateNode({
   actions,
   createNodeId,
   createContentDigest,
+  getNode,
 }) {
   
   const { createNode, createParentChildLink } = actions
+
+  const finalPath = createFilePath({ node, getNode, basePath: `content` })
+  const artifactName = path.normalize(path.format({
+    ...path.parse(finalPath),
+    base: '', ext: '.multi.sir'
+  }))
+  const artifactPath = path.join('public', 'typst', artifactName)
   
   const buffer = compiler.vector(node.absolutePath)
+
+  writeFileSync(artifactPath, buffer)
 
   const typstNode = {
     id: createNodeId(`${node.id} >> Typst`),
@@ -33,7 +46,7 @@ async function onCreateNode({
     description: compiler.description(node.absolutePath) ?? ``,
   }
   typstNode.excerpt = typstNode.frontmatter.description
-  typstNode.artifact = buffer.toString('base64')
+  typstNode.artifact = path.join('/typst', artifactName).replace(/\\/g, '/')
 
   typstNode.fileAbsolutePath = node.absolutePath;
 

@@ -6,7 +6,10 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.20.13",
-    "gatsby-core-utils": "^4.13.1"
+    "fs-extra": "^11.2.0",
+    "gatsby-core-utils": "^4.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
