@@ -27,7 +27,7 @@ Then include this plugin in your `gatsby-config.js`:
 module.exports = {
   plugins: [
     /// ...
-    `gatsby-transformer-typst`
+    `gatsby-transformer-typst`,
   ],
 }
 ```
@@ -35,16 +35,25 @@ module.exports = {
 If you need tweak the scale of typst content, you can pass in a `domScale` option:
 
 ```js
-{
-  resolve: `gatsby-transformer-typst`,
-  options: {
-    domScale: 1.17,
-  }
-},
+module.exports = {
+  plugins: [
+    /// ...
+    {
+      resolve: `gatsby-transformer-typst`,
+      options: {
+        domScale: 1.17,
+      }
+    },
+  ],
+}
 ```
 
 `domScale` align your font-size in the typst content (like `16pt`) with the one in HTML/CSS. Trying several values interactively should work.
 
 ## Example
 
-Check out my [`blog-ng`](https://github.com/seven-mile/blog-ng) for an example of integrate it into a gatsby.js blog.
+Check out my [`blog-ng`](https://github.com/seven-mile/blog-ng) for an example of integrating it into a gatsby.js blog.
+
+[This workflow](https://github.com/seven-mile/blog-ng/blob/main/.github/workflows/deploy.yml) should be helpful.
+
+Use [this React component](https://github.com/seven-mile/blog-ng/blob/main/src/components/typst-doc.tsx) to render the `Typst` artifacts.
