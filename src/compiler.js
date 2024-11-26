@@ -2,12 +2,8 @@ const { NodeCompiler, DynLayoutCompiler } = require('@myriaddreamin/typst-ts-nod
 
 class Compiler {
   constructor() {
-    const compileArgs = {
-      ...NodeCompiler.defaultCompileArgs(),
-      // workspace should be cwd
-    };
-    this.base = NodeCompiler.create(compileArgs);
-    this.dyn = DynLayoutCompiler.fromBoxed(NodeCompiler.create(compileArgs).intoBoxed());
+    this.base = NodeCompiler.create();
+    this.dyn = DynLayoutCompiler.fromBoxed(NodeCompiler.create().intoBoxed());
   }
 
   title(path) {
