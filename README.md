@@ -9,19 +9,7 @@ Check `gatsby-node.js` for the node structure.
 
 ## How to use
 
-This plugin depends on [`typst.ts`](https://github.com/Myriad-Dreamin/typst.ts). These packages are not published to npm, so you need to link them manually.
-
-```sh
-yarn link @myriaddreamin/typst.ts @myriaddreamin/typst-ts-renderer @myriaddreamin/typst-ts-node-compiler
-yarn build
-yarn link
-
-
-cd $GATSBY_PROJECT_ROOT
-yarn link gatsby-transformer-typst
-```
-
-Then include this plugin in your `gatsby-config.js`:
+Add this package and include this plugin in your `gatsby-config.js`:
 
 ```js
 module.exports = {
@@ -53,7 +41,5 @@ module.exports = {
 ## Example
 
 Check out my [`blog-ng`](https://github.com/seven-mile/blog-ng) for an example of integrating it into a gatsby.js blog.
-
-[This workflow](https://github.com/seven-mile/blog-ng/blob/main/.github/workflows/deploy.yml) should be helpful.
 
 Use [this React component](https://github.com/seven-mile/blog-ng/blob/main/src/components/typst-doc.tsx) to render the `Typst` artifacts.
