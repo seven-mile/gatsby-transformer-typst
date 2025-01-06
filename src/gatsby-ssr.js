@@ -10,17 +10,11 @@ export const onRenderBody = ({ setHeadComponents }, pluginOptions) => {
   } = pluginOptions;
 
   const plugin_base = path.resolve(process.cwd(), 'node_modules/gatsby-transformer-typst')
-
   const typst_assets_path = path.resolve(plugin_base, 'assets')
 
-  const typst_main_path = path.resolve(
-    plugin_base,
-    'node_modules/@myriaddreamin/typst.ts/dist/esm/main.bundle.js',
-  );
-  const renderer_path = path.resolve(
-    plugin_base,
-    'node_modules/@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm',
-  );
+  const proj_root = process.cwd();
+  const typst_main_path = path.resolve(proj_root, 'node_modules/@myriaddreamin/typst.ts/dist/esm/main.bundle.js');
+  const renderer_path = path.resolve(proj_root, 'node_modules/@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm');
 
   try {
     const target_path = path.join(process.cwd(), 'public', 'typst');
