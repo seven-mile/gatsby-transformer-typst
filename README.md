@@ -9,6 +9,11 @@ Check `gatsby-node.js` for the node structure.
 
 ## How to use
 
+> [!IMPORTANT]
+> Please ensure the version consistency among `typst.ts` packages!
+>
+> The plugin attach the wasm module to your gatsby assets, so the renderer has to be compatible with the version used in the plugin.
+
 Add this package and include this plugin in your `gatsby-config.js`:
 
 ```js
