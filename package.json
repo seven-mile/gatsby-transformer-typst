@@ -1,14 +1,14 @@
 {
   "name": "gatsby-transformer-typst",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "transform typst source files to html with typst.ts",
   "author": "seven-mile",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.20.13",
-    "@myriaddreamin/typst.ts": "=0.5.4",
-    "@myriaddreamin/typst-ts-renderer": "=0.5.4",
     "@myriaddreamin/typst-ts-node-compiler": "=0.5.4",
+    "@myriaddreamin/typst-ts-renderer": "=0.5.4",
+    "@myriaddreamin/typst.ts": "=0.5.4",
     "fs-extra": "^11.2.0",
     "gatsby-core-utils": "^4.13.1",
     "gatsby-source-filesystem": "^5.13.1",
