@@ -32,3 +32,7 @@ flow-typed
 coverage
 decls
 examples
+
+# toolchain configs
+.babelrc
+tsconfig.json
