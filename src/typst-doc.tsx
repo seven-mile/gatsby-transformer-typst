@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import * as typst from '@myriaddreamin/typst.ts';
-import "enhanced-typst-svg/dist/style.css";
+import "@7mile/enhanced-typst-svg/dist/style.css";
 // @ts-ignore
-import typst_svg_util from "file-loader!enhanced-typst-svg/dist/index.min.js";
+import typst_svg_util from "file-loader!@7mile/enhanced-typst-svg/dist/index.min.js";
 // @ts-ignore
 import typst_renderer from 'file-loader!@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm';
 import { getOptionValue } from './option-store';
