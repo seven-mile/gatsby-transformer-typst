@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@7mile/enhanced-typst-svg@=0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@7mile/enhanced-typst-svg/-/enhanced-typst-svg-0.6.0.tgz#a9fecc24791f1e451959b9c04ac360d3bdd80755"
+  integrity sha512-Le3MWAXZC3G+TDT7YJp1hMYCWyBEIGNAQXwcIYkxtRb5PZFTrTLsAfG9yQ7iowBxd4qA3JqZIYeZomvHIh3afA==
+
 "@ampproject/remapping@^2.2.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.3.0.tgz#ed441b6fa600072520ce18b43d2c8cc8caecc7f4"

@@ -10,6 +10,7 @@
     "@myriaddreamin/typst-ts-renderer": "=0.6.0",
     "@myriaddreamin/typst-ts-web-compiler": "=0.6.0",
     "@myriaddreamin/typst.ts": "=0.6.0",
+    "@7mile/enhanced-typst-svg": "=0.6.0",
     "fs-extra": "^11.2.0",
     "gatsby-core-utils": "^4.13.1",
     "gatsby-source-filesystem": "^5.13.1",
