@@ -5,6 +5,7 @@ const Compiler = require("./compiler");
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require('path');
 const { writeFileSync, mkdirSync } = require("fs");
+const { setOptionValue } = require("./option-store");
 
 const compiler = new Compiler();
 
@@ -25,7 +26,14 @@ async function onCreateNode({
   }))
   const artifactPath = path.join('public', 'typst', artifactName)
   
-  const buffer = compiler.vector(node.absolutePath)
+  let buffer;
+
+  try {
+    buffer = compiler.vector(node.absolutePath)
+  } catch (e) {
+    console.error(`Failed to compile Typst artifact for ${node.absolutePath}: ${e}`)
+    return
+  }
 
   mkdirSync(path.dirname(artifactPath), { recursive: true })
   writeFileSync(artifactPath, buffer)
@@ -61,4 +69,7 @@ async function onCreateNode({
 exports.onCreateNode = onCreateNode
 exports.shouldOnCreateNode = ({ node }) => {
   return node.internal.type === "File" && !!supportedExtensions[node.extension]
+}
+exports.onPreInit = (_, pluginOptions) => {
+  setOptionValue('domScale', pluginOptions.domScale ?? 1.0);
 }

@@ -6,9 +6,10 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.20.13",
-    "@myriaddreamin/typst-ts-node-compiler": "=0.5.4",
-    "@myriaddreamin/typst-ts-renderer": "=0.5.4",
-    "@myriaddreamin/typst.ts": "=0.5.4",
+    "@myriaddreamin/typst-ts-web-compiler": "=0.6.0",
+    "@myriaddreamin/typst-ts-node-compiler": "=0.6.0",
+    "@myriaddreamin/typst-ts-renderer": "=0.6.0",
+    "@myriaddreamin/typst.ts": "=0.6.0",
     "fs-extra": "^11.2.0",
     "gatsby-core-utils": "^4.13.1",
     "gatsby-source-filesystem": "^5.13.1",
@@ -17,9 +18,14 @@
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
+    "@babel/preset-typescript": "^7.26.0",
+    "@types/react": "^19.0.3",
     "babel-preset-gatsby-package": "^3.13.1",
     "cross-env": "^7.0.3",
-    "gatsby-plugin-utils": "^4.13.1"
+    "gatsby-plugin-utils": "^4.13.1",
+    "react": "^19.0.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2"
   },
   "homepage": "https://github.com/seven-mile/gatsby-transformer-typst",
   "keywords": [
@@ -29,9 +35,10 @@
     "typst.ts"
   ],
   "scripts": {
-    "build": "babel src --out-dir . --ignore \"**/__tests__\"",
+    "build": "tsc && babel src --out-dir . --extensions .ts,.tsx,.js --ignore \"**/__tests__\"",
     "prepare": "cross-env NODE_ENV=production npm run build",
-    "watch": "babel -w src --out-dir . --ignore \"**/__tests__\""
+    "watch": "tsc && babel -w src --out-dir . --extensions .ts,.tsx,.js --ignore \"**/__tests__\"",
+    "clean": "rm *.js *.d.ts"
   },
   "engines": {
     "node": ">=18.0.0"

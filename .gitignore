@@ -69,4 +69,7 @@ yarn-error.log
 .yarn-integrity
 
 /*.js
+/*.d.ts
 !index.js
+
+*.tsbuildinfo
